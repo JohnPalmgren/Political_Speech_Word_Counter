@@ -3,7 +3,7 @@ from stopwords import stop_words
 
 
 def clean_words(words):
-    """Removes invalid or irrelevant words"""
+    """Takes a string, removes invalid or irrelevant words and returns a list of words"""
     
     cleaned_words = []
     words = str(words)
@@ -17,7 +17,7 @@ def clean_words(words):
     
     
 def frequency(item):
-    """counts the frequency of an item"""
+    """counts the frequency of an item in a list"""
     
     freq = {}
     
@@ -28,13 +28,19 @@ def frequency(item):
 
 
 def top_n_words(words, n):
-    """return the top n words from a dictionary"""
+    """return the top n words from a dictionary
+    parameters:
+        words(dictionary) containing word and word-count pairs
+        n(int) number of words to return
+        """
     
-    return {k: v for k, v in sorted(words.items(), key=lambda item: item[1], reverse = True)[:n]}
+    return {k: v for k, v in sorted(words.items(), key=lambda item: item[1], 
+                                    reverse = True)[:n]}
 
 
 def word_match_count(word_frequencies1, word_frequencies2):
     """Returns the number of matching elements between two lists"""
+    
     count = 0
     for word in word_frequencies1:
         if word in word_frequencies2:
@@ -43,8 +49,12 @@ def word_match_count(word_frequencies1, word_frequencies2):
 
 
 def compare_members(members, n):
-    """compare groups to find most and least similar word use when 
-    comparing top n words"""
+    """compare subjects to find those who use the most and least similar words 
+    in the speaches when comparing the top n words
+    parameters:
+        members(str) 'party' or 'speaker'
+        n (int) top number of words to compare
+    """
     
     similarity = {}
     
@@ -69,7 +79,11 @@ def compare_members(members, n):
 
             
 def display_results(member, n):
-    """display least and most simialr political members"""
+    """display least and most simialr political members
+    parameters:
+        members(str) 'party' or 'speaker'
+        n (int) top number of words to compare
+    """
     
     comparison = compare_members(member, n)
     
