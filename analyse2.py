@@ -100,4 +100,4 @@ def display_results(member, n):
     print (f'\nThe {plural} with the most top {n} words in common are {most[0]}'
            f' with {most[1]} out of {n} words in common\n\nThe {plural} with the '
            f'least top {n} words in common are {least[0]} with {least[1]} out of {n} words'
-           'in common\n')
+           ' in common\n')
