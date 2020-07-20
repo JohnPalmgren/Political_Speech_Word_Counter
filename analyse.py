@@ -1,8 +1,5 @@
 import database_mod
 from stopwords import stop_words
-
-
-database_name = 'speech.sqlite'
     
 
 class AnalysisTools():
